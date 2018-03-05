@@ -5,6 +5,7 @@ const _ = require('lodash');
 const yargs = require('yargs');
 
 const notes = require('./notes');
+const util = require('./utils');
 
 const argv = yargs.argv;
 const command = argv._[0];
@@ -17,7 +18,7 @@ if(command === 'add') {
 	if(note){
 		console.log('Note created');
 		console.log('---');
-		printNote(note);
+		util.printNote(note);
 	} else {
 		console.log('Note title exists');
 	}
@@ -28,7 +29,7 @@ if(command === 'add') {
 	if(note) {
 		console.log('Note found');
 		console.log('---')
-		printNote(note);
+		util.printNote(note);
 	} else {
 		console.log('Note not found');
 	}
@@ -38,9 +39,4 @@ if(command === 'add') {
 	console.log(message);
 } else {
 	console.log('Command not recognised');
-}
-
-const printNote = (note) => {
-	console.log(`Title: ${note.title}`);
-	console.log(`Body: ${note.title}`);	
 }
