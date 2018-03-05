@@ -39,12 +39,7 @@ const getAll = () => {
 const getNote = (title) => {
     const notes = fetchNotes();
     const foundNote = notes.filter(note => note.title === title);
-
-    if(foundNote.length = 1){
-        return foundNote[0];
-    } else {
-        return false;
-    }
+    return foundNote[0];
 }
 
 const removeNote = (title) => {
