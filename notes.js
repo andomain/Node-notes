@@ -52,7 +52,7 @@ const removeNote = (title) => {
 
 const logNote = (note) => {
     console.log(`Title: ${note.title}`);
-    console.log(`Body: ${note.title}`); 
+    console.log(`Body: ${note.body}`); 
 }
 
 
