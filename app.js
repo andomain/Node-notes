@@ -16,18 +16,18 @@ if(command === 'add') {
 	const note = notes.addNote(argv.title, argv.body);
 	if(note){
 		console.log('Note created');
-		console.log('---');
 		notes.logNote(note);
 	} else {
 		console.log('Note title exists');
 	}
 } else if (command === 'list') {
-	notes.getAll();
+	const allNotes =  notes.getAll();
+	console.log(`Printing ${allNotes.length} note(s)`);
+	allNotes.forEach(note => notes.logNote(note));
 } else if (command === 'read') {
 	const note = notes.getNote(argv.title);
 	if(note) {
 		console.log('Note found');
-		console.log('---')
 		notes.logNote(note);
 	} else {
 		console.log('Note not found');
