@@ -26,8 +26,6 @@ const addNote = (title, body) => {
     } else {
         console.log(`Note${title} already exists`);
     }
-
-
 }
 
 const getAll = () => {
